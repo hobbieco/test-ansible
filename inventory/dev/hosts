@@ -8,13 +8,13 @@ a01c7 ansible_host=192.168.122.241
 a02c7 ansible_host=192.168.122.242
 
 [u20:children]
-u20-1
-u20-2
+u20_1
+u20_2
 
-[u20-1]
+[u20_1]
 a05u20  ansible_host=192.168.122.245
 
-[u20-2]
+[u20_2]
 a06u20  ansible_host=192.168.122.246
 
 [u20:vars]

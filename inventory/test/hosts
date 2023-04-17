@@ -9,11 +9,11 @@ all:
 #          ansible_host: 192.168.122.242
     u20:
       children:
-        u20-1:
+        u20_1:
           hosts:
             a05u20:
               ansible_host: 192.168.122.245
-        u20-2:
+        u20_2:
           hosts:
             a06u20:
               ansible_host: 192.168.122.246
