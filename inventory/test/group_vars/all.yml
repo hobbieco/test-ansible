@@ -1,0 +1,3 @@
+---
+# file: group_vars/all
+active_profile: test
