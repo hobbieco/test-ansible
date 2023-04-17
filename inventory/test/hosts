@@ -1,12 +1,5 @@
 all:
   children:
-#    c7:
-#      hosts:
-#        a[01:02]c7:
-#        a01c7:
-#          ansible_host: 192.168.122.241
-#        a02c7:
-#          ansible_host: 192.168.122.242
     u20:
       children:
         u20_1:

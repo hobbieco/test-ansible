@@ -1,5 +1,4 @@
 [c7]
-#a[01:02]c7
 a01c7 ansible_host=192.168.122.241
 a02c7 ansible_host=192.168.122.242
 
@@ -12,8 +11,4 @@ a05u20  ansible_host=192.168.122.245
 
 [u20_2]
 a06u20  ansible_host=192.168.122.246
-
-[u20:vars]
-key1=value1
-key2=value2
 
