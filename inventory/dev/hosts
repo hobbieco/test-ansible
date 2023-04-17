@@ -1,7 +1,3 @@
-[all:children]
-c7
-u20
-
 [c7]
 #a[01:02]c7
 a01c7 ansible_host=192.168.122.241
