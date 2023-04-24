@@ -17,7 +17,7 @@
 - name: test copy
   ansible.builtin.copy:
     src: /var/lib/awx/projects/data-files/test-copy
-    dest: test/
+    dest: test
     mode: 0600
     group: vmuser
     owner: vmuser
