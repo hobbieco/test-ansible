@@ -23,7 +23,7 @@ test_empty is define / {{ test_empty }}
 test_empty is define but empty(lenth 0)
 {% endif %}
 
-{% if test_bool is defined and test_bool is not none and test_bool is boolean and test_bool | bool %}
+{% if test_bool is defined and test_bool is not none and test_bool | bool %}
 test_bool is define / {{ test_bool }}
 {% else %}
 test_bool
