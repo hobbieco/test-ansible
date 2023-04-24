@@ -1,3 +1,8 @@
 # file: group_vars/all
 active_profile: test
 otherKey1: all-test-vars1
+
+test_null:
+test_empty: ""
+test_bool: true
+test_int: 100
