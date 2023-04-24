@@ -10,8 +10,15 @@
   ansible.builtin.template:
     src: test/test-jinja.config.j2
     dest: test-jinja.config
+    mode: 0640
+    group: vmuser
+    owner: vmuser
 
 - name: test copy
   ansible.builtin.copy:
     src: /var/lib/awx/projects/data-files/test-copy
-    dest: test/test-copy
+    dest: test/
+    mode: 0600
+    group: vmuser
+    owner: vmuser
+
