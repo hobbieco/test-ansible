@@ -1,0 +1,36 @@
+hosts:
+{% for i in groups['u20'] %}
+  - {{ hostvars[i]['inventory_hostname'] }}
+{% endfor %}
+
+# comment test
+{#
+  # jinja2 comment
+  {% for i in groups['u20'] %}
+    - {{ hostvars[i]['inventory_hostname'] }}
+  {% endfor %}
+#}
+
+{% if test_null is defined and test_null is not none %}
+test_null is define / {{ test_null }}
+{% else %}
+test_null is define but none
+{% endif %}
+
+{% if test_empty is defined and test_empty is not none and test_empty is string and test_empty | length > 0 %}
+test_empty is define / {{ test_empty }}
+{% else %}
+test_empty is define but empty(lenth 0)
+{% endif %}
+
+{% if test_bool is defined and test_bool is not none and test_bool is boolean and test_bool | bool %}
+test_bool is define / {{ test_bool }}
+{% else %}
+test_bool
+{% endif %}
+
+{% if test_int is defined and test_int is not none and test_int is number %}
+test_int is define / {{ test_int }}
+{% else %}
+test_int
+{% endif %}
