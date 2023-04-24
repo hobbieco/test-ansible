@@ -15,8 +15,3 @@
   ansible.builtin.copy:
     src: /var/lib/awx/projects/data-files/test-copy
     dest: test/test-copy
-
-- name: test synchronize
-  ansible.posix.synchronize:
-    src: /var/lib/awx/projects/data-files/test-sync
-    dest: test/test-sync
