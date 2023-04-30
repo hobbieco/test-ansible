@@ -6,6 +6,11 @@
   ansible.builtin.debug:
     msg: test debug log    otherKey1 - {{ otherKey1 }}
 
+- name: test become pwd
+  ansible.builtin.apt:
+    name: curl
+    state: present
+
 - name: test jinja2
   ansible.builtin.template:
     src: test/test-jinja.config.j2
