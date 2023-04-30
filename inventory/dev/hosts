@@ -12,7 +12,7 @@ ahost12 ansible_host=192.168.122.212
 support
 k8s
 
-[support]
+[support:children]
 support_master
 support_slave
 
@@ -25,7 +25,7 @@ ahost01 ansible_host=192.168.122.201
 k8s_master
 k8s_worker
 
-[k8s_master]
+[k8s_master:children]
 k8s_master_main
 k8s_master_join
 

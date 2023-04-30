@@ -1,11 +1,2 @@
-- name: test ping debug - group vars all
-  ansible.builtin.debug:
-    msg: ping debug log    all - {{ active_profile }}
-
-- name: test ping debug - group vars all
-  ansible.builtin.debug:
-    msg: ping debug log    otherKey1 - {{ otherKey1 }}
-
 - name: test ping
   ansible.builtin.ping:
-

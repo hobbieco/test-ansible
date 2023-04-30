@@ -1,6 +1,6 @@
 hosts:
 {% for i in groups['cluster'] %}
-  - {{ hostvars[i]['inventory_hostname'] }} : {{ hostvars[i]['ansible_host'] }}
+  - {{ hostvars[i]['inventory_hostname'] }} : {{ hostvars[i]['ansible_host'] }} / {{ vm_usr }} / {{ vm_pwd }}
 {% endfor %}
 
 # comment test
