@@ -1,6 +1,8 @@
 # file: group_vars/all
 active_profile: dev
 otherKey1: all-dev-vars1
+vm_usr: "{{ vault_vm_usr }}"
+vm_pwd: "{{ vault_vm_pwd }}"
 
 test_null:
 test_empty: ""

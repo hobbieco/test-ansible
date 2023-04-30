@@ -1,13 +1,13 @@
 hosts:
-{% for i in groups['u20'] %}
-  - {{ hostvars[i]['inventory_hostname'] }}
+{% for i in groups['cluster'] %}
+  - {{ hostvars[i]['inventory_hostname'] }} : {{ hostvars[i]['ansible_host'] }}
 {% endfor %}
 
 # comment test
 {#
   # jinja2 comment
   {% for i in groups['u20'] %}
-    - {{ hostvars[i]['inventory_hostname'] }}
+    - {{ hostvars[i]['inventory_hostname'] }} : {{ hostvars[i]['ansible_host'] }}
   {% endfor %}
 #}
 

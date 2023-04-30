@@ -1,13 +1,44 @@
 all:
   children:
-    u20:
+    vm:
       children:
-        u20_1:
+        vm_init:
           hosts:
-            a05u20:
-              ansible_host: 192.168.122.245
-        u20_2:
+            ahost11:
+              ansible_host: 192.168.122.211
+        vm_ready:
           hosts:
-            a06u20:
-              ansible_host: 192.168.122.246
-
+            ahost12:
+              ansible_host: 192.168.122.212
+    cluster:
+      children:
+        support:
+          children:
+            support_master:
+              hosts:
+                ahost01:
+                  ansible_host: 192.168.122.201
+            support_slave:
+              hosts:
+        k8s:
+          children:
+            k8s_master:
+              children:
+                k8s_master_main:
+                  hosts:
+                    ahost02:
+                      ansible_host: 192.168.122.202
+                k8s_master_join:
+                  hosts:
+            k8s_worker:
+              children:
+                k8s_worker_manage:
+                  hosts:
+                    ahost03:
+                      ansible_host: 192.168.122.203
+                k8s_worker_normal:
+                  hosts:
+                    ahost04:
+                      ansible_host: 192.168.122.204
+                    ahost05:
+                      ansible_host: 192.168.122.205

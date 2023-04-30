@@ -1,14 +1,46 @@
-[c7]
-a01c7 ansible_host=192.168.122.241
-a02c7 ansible_host=192.168.122.242
+[vm:children]
+vm_init
+vm_ready
 
-[u20:children]
-u20_1
-u20_2
+[vm_init]
+ahost11 ansible_host=192.168.122.211
 
-[u20_1]
-a05u20  ansible_host=192.168.122.245
+[vm_ready]
+ahost12 ansible_host=192.168.122.212
 
-[u20_2]
-a06u20  ansible_host=192.168.122.246
+[cluster:children]
+support
+k8s
 
+[support]
+support_master
+support_slave
+
+[support_master]
+ahost01 ansible_host=192.168.122.201
+
+[support_slave]
+
+[k8s:children]
+k8s_master
+k8s_worker
+
+[k8s_master]
+k8s_master_main
+k8s_master_join
+
+[k8s_master_main]
+ahost02 ansible_host=192.168.122.202
+
+[k8s_master_join]
+
+[k8s_worker:children]
+k8s_worker_manage
+k8s_worker_normal
+
+[k8s_worker_manage]
+ahost03 ansible_host=192.168.122.203
+
+[k8s_worker_normal]
+ahost04 ansible_host=192.168.122.204
+ahost05 ansible_host=192.168.122.205
