@@ -4,6 +4,10 @@ otherKey1: all-dev-vars1
 vm_usr: "{{ vault_vm_usr }}"
 vm_pwd: "{{ vault_vm_pwd }}"
 
+ssh_path: /data/test/ssh
+ssh_file: "{{ ssh_path }}/id_rsa"
+ssh_id : test@ansible
+
 test_null:
 test_empty: ""
 test_bool: true

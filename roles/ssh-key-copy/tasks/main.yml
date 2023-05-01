@@ -1,0 +1,5 @@
+# roles/sshkey-copy/tasks/main.yml
+
+- include_tasks: sshkey-gen.yml
+
+- include_tasks: sshkey-copy.yml

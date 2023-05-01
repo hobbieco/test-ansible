@@ -1,3 +1,5 @@
+# roles/test/tasks/test-uuid.yml
+
 - name: test uuid - create
   shell: uuidgen
   register: test_uuid

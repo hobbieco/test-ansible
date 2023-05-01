@@ -1,0 +1,6 @@
+# roles/ssh-key-remove/tasks/main.yml
+
+- name: remove ssh key file
+  ansible.builtin.file:
+    path: "{{ ssh_file }}"
+    state: absent

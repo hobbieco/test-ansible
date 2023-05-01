@@ -1,0 +1,22 @@
+# role/sshkey-copy/tasks/sshkey-gen.yml
+
+- name: create directory
+  ansible.builtin.file:
+    path: "{{ ssh_path }}"
+    state: directory
+    owner: "{{ vm_usr }}"
+    group: "{{ vm_usr }}"
+    mode: "0755"
+
+- name: check ssh key file
+  ansible.builtin.stat:
+    path: "{{ ssh_file }}"
+  register: ssh_key
+
+- name: create ssh key
+  become: false
+  ansible.builtin.expect:
+    command: ssh-keygen -t rsa -m PEM -q -N '' -f {{ ssh_file }} -C {{ ssh_id }}
+    responses:
+      ^Overwrite(.*): y
+  when: not ssh_key.stat.exists

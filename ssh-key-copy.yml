@@ -1,0 +1,6 @@
+# ssh-key-copy.yml
+
+- name: create ssh key
+  hosts: support_master
+  roles:
+  - ssh-key-copy

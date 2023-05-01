@@ -1,2 +1,4 @@
+# roles/ping/tasks/main.yml
+
 - name: test ping
   ansible.builtin.ping:
