@@ -1,0 +1,11 @@
+# ssh-key-remove.yml
+
+- name: remove ssh key
+  hosts: support_master
+  roles:
+  - ssh-key-remove
+
+- name: remove remote ssh key
+  hosts: k8s
+  roles:
+  - ssh-key-remove-remote
