@@ -3,6 +3,5 @@
     msg: test debug log    all - {{ active_profile }}
 
 - name: test debug - group_vars all
-  hosts: all
   ansible.builtin.debug:
     msg: test debug log    otherKey1 - {{ otherKey1 }}

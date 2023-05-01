@@ -1,6 +1,7 @@
 # roles/test/main.yml
 
 - include_tasks: test-vars.yml
+  hosts: all
 
 - include_tasks: test-jinja2.yml
 
