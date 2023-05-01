@@ -1,7 +1,7 @@
 # role/sshkey-copy/tasks/sshkey-copy.yml
 
 - name: copy ssh key
-  bocome: false
+  become: false
   ansible.builtin.expect:
     command: ssh-copy-id -i {{ ssh_file }} {{ vm_usr }}@hostvars[item]['ansible_host']
     responses:
