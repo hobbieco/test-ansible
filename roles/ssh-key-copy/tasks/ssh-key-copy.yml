@@ -6,4 +6,4 @@
     command: ssh-copy-id -i {{ ssh_file }} {{ vm_usr }}@hostvars[item]['ansible_host']
     responses:
       (.*)password(.*): "{{ vm_pwd }}"
-  loop: "groups['k8s']"
+  loop: "{{ groups['k8s'] }}"
