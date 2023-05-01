@@ -3,7 +3,7 @@
 - name: copy ssh key
   become: false
   ansible.builtin.expect:
-    command: ssh-copy-id -i {{ ssh_file }} {{ vm_usr }}@{{ hostvars[item]['ansible_host'] }}
+    command: ssh-copy-id -o StrictHostKeyChecking=no -i {{ ssh_file }} {{ vm_usr }}@{{ hostvars[item]['ansible_host'] }}
     responses:
       (.*)password(.*): "{{ vm_pwd }}"
   loop: "{{ groups['k8s'] }}"
