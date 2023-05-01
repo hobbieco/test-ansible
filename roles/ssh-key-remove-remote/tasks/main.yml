@@ -1,6 +1,13 @@
 # roles/ssh-key-remove-remote/tasks/main.yml
 
+- name: check authorized_keys file
+  become: false
+  ansible.builtin.stat:
+    path: ~/.ssh/authorized_keys
+  register: authorized_keys
+
 - name: remove ssh key
   become: false
   ansible.builtin.command:
     cmd: sed '/{{ ssh_id }}/d' -i ~/.ssh/authorized_keys
+  when: authorized_keys.stat.exists
