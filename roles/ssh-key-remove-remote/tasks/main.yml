@@ -3,18 +3,18 @@
 - name: check authorized_keys file
   become: false
   ansible.builtin.stat:
-    path: ~/.ssh/authorized_keys
+    path: "{{ target_file }}"
   register: authorized_keys
 
 #- name: remove ssh key
 #  become: false
 #  ansible.builtin.command:
-#    cmd: sed '/{{ ssh_id }}/d' -i ~/.ssh/authorized_keys
+#    cmd: sed '/{{ ssh_id }}/d' -i {{ target_file }}
 #  when: authorized_keys.stat.exists
 
 - name: remove ssh key
   become: false
   ansible.builtin.lineinfile:
-    path: ~/.ssh/authorized_keys
+    path: "{{ target_file }}"
     state: absent
     regexp: "{{ ssh_id }}$"

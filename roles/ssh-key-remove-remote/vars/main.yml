@@ -1,0 +1,3 @@
+# roles/ssh-key-remove-remote/vars/main.yml
+
+target_file: ~/.ssh/authorized_keys
