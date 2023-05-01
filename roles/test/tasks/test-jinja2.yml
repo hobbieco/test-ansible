@@ -1,0 +1,7 @@
+- name: test jinja2
+  ansible.builtin.template:
+    src: test/test-jinja.config.j2
+    dest: test-jinja.config
+    mode: 0640
+    group: vmuser
+    owner: vmuser

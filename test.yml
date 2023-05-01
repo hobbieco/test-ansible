@@ -1,3 +1,4 @@
-- hosts: support_master
+- name: playbook - test
+  hosts: support_master
   roles:
   - test

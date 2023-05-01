@@ -1,0 +1,7 @@
+- name: test uuid - create
+  shell: uuidgen
+  register: test_uuid
+
+- name: test uuid - log
+  ansible.builtin.debug:
+    msg: "{{ test_uuid['stdout'] }}"
