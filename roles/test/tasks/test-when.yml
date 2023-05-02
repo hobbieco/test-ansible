@@ -8,7 +8,7 @@
 - name: test when - hostvars - equals
   ansible.builtin.command:
     cmd: echo {{ test_when }}
-  when: test_when.stdout == "" + hostvars[inventory_hostname]['test_when']
+  when: test_when.stdout == hostvars[inventory_hostname]['test_when']
 
 - name: test when - hostvars - not equals
   ansible.builtin.command:
