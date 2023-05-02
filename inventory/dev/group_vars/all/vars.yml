@@ -14,3 +14,5 @@ test_bool: true
 test_int: 100
 
 test_when: testWhen
+test_str1: test
+test_str2: When
