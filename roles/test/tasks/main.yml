@@ -9,3 +9,5 @@
 - include_tasks: test-copy.yml
 
 - include_tasks: test-become.yml
+
+- include_tasks: test-when.yml

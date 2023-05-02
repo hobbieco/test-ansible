@@ -12,3 +12,5 @@ test_null:
 test_empty: ""
 test_bool: true
 test_int: 100
+
+test_when: testWhen
