@@ -8,8 +8,8 @@
 - name: add no password
   ansible.builtin.lineinfile:
     path: /etc/sudoers
-    line: "{{ vm_usr }}\tALL=(ALL) NOPASSWD: ALL"
-    insertafter: "^root\tALL="
+    line: "{{ vm_usr }}\tALL=NOPASSWD: ALL\n"
+    insertafter: "^%sudo\tALL="
     state: present
 
 - name: chmod /etc/sudoers remove write
