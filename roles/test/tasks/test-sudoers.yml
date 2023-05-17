@@ -2,17 +2,17 @@
 
 - name: chmod /etc/sudoers add write
   ansible.builtin.file:
-    path: /home/vmuser/sudoers
+    path: /etc/sudoers
     mode: "0640"
 
 - name: add no password
   ansible.builtin.lineinfile:
-    path: /home/vmuser/sudoers
-    line: "{{ vm_usr }}\tALL"
+    path: /etc/sudoers
+    line: "{{ vm_usr }}\tALL=(ALL) NOPASSWD: ALL"
     insertafter: "^root\tALL="
     state: present
 
 - name: chmod /etc/sudoers remove write
   ansible.builtin.file:
-    path: /home/vmuser/sudoers
+    path: /etc/sudoers
     mode: "0440"
