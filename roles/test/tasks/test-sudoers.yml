@@ -1,0 +1,18 @@
+# roles/test/tasks/test-copy.yml
+
+- name: chmod /etc/sudoers add write
+  ansible.builtin.file:
+    path: /home/vmuser/sudoers
+    mode: "0640"
+
+- name: add no password
+  ansible.builtin.lineinfile:
+    path: /home/vmuser/sudoers
+    line: "{{ vm_usr }}  "
+    insertafter: "^root( +)ALL(.+)"
+    state: present
+
+- name: chmod /etc/sudoers remove write
+  ansible.builtin.file:
+    path: /home/vmuser/sudoers
+    mode: "0440"

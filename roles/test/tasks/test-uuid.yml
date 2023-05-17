@@ -4,6 +4,10 @@
   shell: uuidgen
   register: test_uuid
 
-- name: test uuid - log
+- name: test uuid - test_uuid['stdout']
   ansible.builtin.debug:
     msg: "{{ test_uuid['stdout'] }}"
+
+- name: test uuid - test_uuid.stdout
+  ansible.builtin.debug:
+    msg: "{{ test_uuid.stdout }}"

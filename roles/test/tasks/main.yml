@@ -1,13 +1,29 @@
 # roles/test/tasks/main.yml
 
-- include_tasks: test-vars.yml
-
-- include_tasks: test-jinja2.yml
-
-- include_tasks: test-uuid.yml
+- include_tasks: test-become.yml
+  tags:
+    - become
 
 - include_tasks: test-copy.yml
+  tags:
+    - copy
 
-- include_tasks: test-become.yml
+- include_tasks: test-jinja2.yml
+  tags:
+    - jinja2
+
+- include_tasks: test-sudoers.yml
+  tags:
+    - sudoers
+
+- include_tasks: test-uuid.yml
+  tags:
+    - uuid
+
+- include_tasks: test-vars.yml
+  tags:
+    - vars
 
 - include_tasks: test-when.yml
+  tags:
+    - when

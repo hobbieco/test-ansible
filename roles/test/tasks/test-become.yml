@@ -1,6 +1,21 @@
 # roles/test/tasks/test-become.yml
 
+- name: check home - become false
+  become: false
+  ansible.builtin.stat:
+    path: "echo %HOME"
+  register: check_home_false
+
+- name: check home - become true
+  become: true
+  ansible.builtin.stat:
+    path: "echo %HOME"
+  register: check_home_true
+
 - name: test become pwd
   ansible.builtin.apt:
-    name: curl
+    name: "{{ item }}"
     state: present
+  with_items:
+    - curl
+    - nfs-common

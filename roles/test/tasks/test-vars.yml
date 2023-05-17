@@ -11,4 +11,4 @@
 - name: test debug - group_vars all
   ansible.builtin.debug:
     msg: test loop group - {{ item }} - {{ hostvars[item]['inventory_hostname'] }} - {{ hostvars[item]['ansible_host'] }}
-  loop: "{{ groups['k8s'] }}"
+  loop: "{{ groups['k8s_master'] + groups['k8s_worker'] }}"
