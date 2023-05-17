@@ -13,6 +13,8 @@
     - jinja2
 
 - include_tasks: test-sudoers.yml
+  vars:
+    sudoers_state: present
   tags:
     - sudoers
 
