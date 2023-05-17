@@ -1,6 +1,5 @@
 # test.yml
 
-- name: playbook - test
-  hosts: support_master
+- hosts: support_master
   roles:
   - test
