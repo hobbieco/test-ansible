@@ -3,12 +3,12 @@
 - name: check home - become false
   become: false
   ansible.builtin.command:
-    cmd: "echo %HOME"
+    cmd: "echo $HOME"
 
 - name: check home - become true
   become: true
   ansible.builtin.command:
-    cmd: "echo %HOME"
+    cmd: "echo $HOME"
 
 - name: test become pwd
   ansible.builtin.apt:
