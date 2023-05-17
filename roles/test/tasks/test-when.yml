@@ -3,25 +3,25 @@
 - name: test when - echo
   ansible.builtin.command:
     cmd: echo {{ test_when }}
-  register: test_when
+  register: test_when_echo
 
 - name: test when - hostvars - equals
   ansible.builtin.command:
     cmd: echo {{ test_when }}
-  when: test_when.stdout == hostvars[inventory_hostname]['test_when']
+  when: test_when_echo.stdout == hostvars[inventory_hostname]['test_when']
 
 - name: test when - hostvars - not equals
   ansible.builtin.command:
     cmd: echo {{ test_when }}
-  when: test_when.stdout != test_when
+  when: test_when_echo.stdout != test_when
 
 - name: test when - var name - equals
   ansible.builtin.command:
     cmd: echo {{ test_when }}
-  when: test_when.stdout == test_str1~test_str2
+  when: test_when_echo.stdout == test_str1~test_str2
 
 - name: test when - var name - not equals
   ansible.builtin.command:
     cmd: echo {{ test_when }}
-  when: test_when.stdout != "test"~test_str2
+  when: test_when_echo.stdout != "test"~test_str2
 

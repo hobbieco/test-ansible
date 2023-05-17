@@ -1,10 +1,12 @@
 # roles/test/tasks/test-become.yml
 
+# result : /home/userid
 - name: check home - become false
   become: false
   ansible.builtin.command:
     cmd: "echo $HOME"
 
+# result : /root
 - name: check home - become true
   become: true
   ansible.builtin.command:

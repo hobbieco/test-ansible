@@ -9,7 +9,7 @@
   ansible.builtin.lineinfile:
     path: /home/vmuser/sudoers
     line: "{{ vm_usr }}  "
-    insertafter: "^root( +)ALL(.+)"
+    insertafter: "^root +ALL=.+"
     state: present
 
 - name: chmod /etc/sudoers remove write
