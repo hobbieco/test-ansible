@@ -1,6 +1,4 @@
-# roles/user-config/tasks/main.yml
-
-
+# roles/pwd-change/tasks/main.yml
 
 - name: change password use command
   ansible.builtin.expect:
@@ -9,10 +7,3 @@
       Current password: "{{ vm_pwd }}"
       New password: "{{ vm_pwd_test }}"
       Retype new password: "{{ vm_pwd_test }}"
-
-- name: change password use module
-  ansible.builtin.user:
-    name: "{{ vm_usr }}"
-    update_password: always
-    password: "{{ vm_pwd | string | password_hash('sha512') }}"
-    state: present

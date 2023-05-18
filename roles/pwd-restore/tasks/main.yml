@@ -1,0 +1,8 @@
+# roles/pwd-restore/tasks/main.yml
+
+- name: change password use module
+  ansible.builtin.user:
+    name: "{{ vm_usr }}"
+    update_password: always
+    password: "{{ vm_pwd | string | password_hash('sha512') }}"
+    state: present

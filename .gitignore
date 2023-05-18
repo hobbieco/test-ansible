@@ -16,7 +16,7 @@
 !roles/requirements.yml
 
 # Avoid plain-text passwords
-*pwd*
+#*pwd*
 *pass*
 *password*
 *.txt
