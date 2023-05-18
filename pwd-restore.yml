@@ -1,5 +1,5 @@
-# user-config.yml
+# pwd-restore.yml
 
 - hosts: support_master
   roles:
-  - user-config
+  - pwd-restore

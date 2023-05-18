@@ -1,5 +1,5 @@
-# user-config.yml
+# pwd-change.yml
 
 - hosts: support_master
   roles:
-  - user-config
+  - pwd-change
