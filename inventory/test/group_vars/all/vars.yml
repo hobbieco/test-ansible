@@ -1,8 +1,10 @@
 # file: group_vars/all
+
 active_profile: test
 otherKey1: all-test-vars1
 vm_usr: "{{ vault_vm_usr }}"
 vm_pwd: "{{ vault_vm_pwd }}"
+vm_pwd_test: "{{ vault_vm_pwd_test }}"
 
 ssh_path: /data/test/ssh
 ssh_file: "{{ ssh_path }}/id_rsa"

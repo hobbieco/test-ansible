@@ -1,0 +1,7 @@
+# roles/user-config/tasks/main.yml
+
+- name: change password
+  ansible.builtin.user:
+    name: "{{ vm_usr }}"
+    password: "{{ vm_pwd_test | pawword_hash('sha512') }}"
+    state: present

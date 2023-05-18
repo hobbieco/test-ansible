@@ -1,0 +1,5 @@
+# user-config.yml
+
+- hosts: support_master
+  roles:
+  - user-config
